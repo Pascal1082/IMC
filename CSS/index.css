@@ -38,7 +38,7 @@
 .dados{
     padding-top: 3% !important;
     text-align: center !important;
-    font-size: 120% !important;
+    font-size: 100% !important;
 }
 
 .botao{
@@ -54,6 +54,6 @@ footer{
     background-color: #000000 !important;
     color: #fff !important;
     padding: 2em !important;
-    margin-top: 100% !important;
+    margin-top: 10% !important;
    
 }
