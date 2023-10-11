@@ -14,11 +14,12 @@
 </head>
 
 <body>
-    <header>
-        <section class="container-fluid bg-info top">
+    <header id="header">
+        <section >
             <h1>Calculadora de IMC</h1>
         </section>
     </header>
+
     <main>
         <section class="txt">
             <p>
@@ -31,11 +32,15 @@
 
                 <b>IMC = 80 kg ÷ (1,80 m × 1,80 m) = 24,69 kg/m2 (Peso ideal)</b><br>
 
-                Utilize a calculadora abaixo para fazer o seu cálculo:<br>
+                Utilize a calculadora abaixo para fazer o seu cálculo:<br><br>
+                Mas primeiro informe por favor se você é homem ou mulher:
             </p>
+        
+            <button id="btnboy" type="button" style="background-color:darkturquoise">Homem</button>
+            <button id="btngirl" type="button" style="background-color: crimson;">Mulher</button><br><br>
         </section>
 
-        <section class="calc row  bg-info ">
+        <section id="calculadora" class="row">
             <div class="col-12 p-3">
                 <h2 style="color: white; text-align: center; font-size: 200%;">Calculadora</h2>
             </div>
@@ -49,17 +54,25 @@
                     <input type="number" id="alt"/><br><br>
                     
                 </form>
-                <button class="botao" onclick="calcular()">Calcular IMC</button><br><br>
+                <button id="botao" onclick="calcular()">Calcular IMC</button><br><br>
             </div>
             <div class="col-1"></div>
 
             <div class="col-12 p-3"></div>
         </section>
 
-        <section class="result">
+        <section class="result row">
+            <div class="col-3">
+                <img id="pessoa" src="">
+            </div>
+            <div class="col-9">
                 <p id="txt1"></p>
-                <p id="txt2"></p>
-
+                <p id="txt2"></p><br><br>
+                <h6 id="frase"></h6>
+            </div>
+            
+            
+            
         </section>
 
         <footer>
@@ -68,6 +81,25 @@
     </main>
 </body>
 <script>
+
+ 
+    document.getElementById("btngirl").addEventListener("click", function(){
+        document.getElementById("header").style.backgroundColor = "crimson";
+        document.getElementById("calculadora").style.backgroundColor = "crimson";
+        document.getElementById("botao").style.backgroundColor = "crimson";
+        document.getElementById("pessoa").src = "imgs/mulher.jpg";
+        document.getElementById("frase").innerHTML = "Nossos erros não são barreiras que nos impedem de caminhar. E, sim, degraus que sustentam nossos corações.";
+        
+    }, false );
+    
+    document.getElementById("btnboy").addEventListener("click", function(){
+        document.getElementById("header").style.backgroundColor = "darkturquoise";
+        document.getElementById("calculadora").style.backgroundColor = "darkturquoise";
+        document.getElementById("botao").style.backgroundColor = "darkturquoise";
+        document.getElementById("pessoa").src = "imgs/homem.jpg";
+        document.getElementById("frase").innerHTML = "Então você não pode viver se não for forte?! Errado! Viver demonstra que você é forte!";
+    }, false );
+
 
 function calcular() {
         var alt = Number(document.getElementById("alt").value);
